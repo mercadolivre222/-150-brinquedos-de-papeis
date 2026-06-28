@@ -102,7 +102,10 @@ targetFiles.forEach(filePath => {
     // Replace the base64 embedded "Criando Artes" logo right below "GANHE HOJE"
     content = content.replace(/src="data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAB4CAYAAABIFc8g[^"]*"/g, 'src="./brinca_facil_logo_v2.png"');
     
-    // 6. Inject Custom CSS for catchy colors
+    // 6. Update Video
+    content = content.replace(/src="https:\/\/criandoarte\.com\/video\/1-VIDEO-PT\.mp4"/g, 'src="./video.mp4"');
+
+    // 7. Inject Custom CSS for catchy colors
     const customCSS = `
     <style>
         /* Catchy Colors and Animations injected by automation */
