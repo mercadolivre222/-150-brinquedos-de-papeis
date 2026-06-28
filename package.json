@@ -1,6 +1,12 @@
 {
+  "scripts": {
+    "build": "vite build"
+  },
   "dependencies": {
     "jpeg-js": "^0.4.4",
     "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "vite": "^8.1.0"
   }
 }
