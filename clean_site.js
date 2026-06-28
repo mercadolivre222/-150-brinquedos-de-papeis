@@ -99,6 +99,8 @@ targetFiles.forEach(filePath => {
     content = content.replace(/src="https:\/\/criandoarte\.com\/wp-content\/uploads\/2026\/05\/150-brinquedos-Photoroom-768x175\.png"/g, 'src="./brinca_facil_logo_v2.png"');
     content = content.replace(/src="[^"]*logo[^"]*"/gi, 'src="./brinca_facil_logo_v2.png"');
     content = content.replace(/src="https:\/\/criandoarte\.com\/wp-content\/uploads\/2025\/12\/Captura-de-tela[^"]*"/gi, 'src="./brinca_facil_logo_v2.png"');
+    // Replace the base64 embedded "Criando Artes" logo right below "GANHE HOJE"
+    content = content.replace(/src="data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAB4CAYAAABIFc8g[^"]*"/g, 'src="./brinca_facil_logo_v2.png"');
     
     // 6. Inject Custom CSS for catchy colors
     const customCSS = `
