@@ -98,6 +98,30 @@ targetFiles.forEach(filePath => {
     // 5. Update logo
     content = content.replace(/src="https:\/\/criandoarte\.com\/wp-content\/uploads\/2026\/05\/150-brinquedos-Photoroom-768x175\.png"/g, 'src="./brinca_facil_logo_v2.png"');
     content = content.replace(/src="[^"]*logo[^"]*"/gi, 'src="./brinca_facil_logo_v2.png"');
+    content = content.replace(/src="https:\/\/criandoarte\.com\/wp-content\/uploads\/2025\/12\/Captura-de-tela[^"]*"/gi, 'src="./brinca_facil_logo_v2.png"');
+    
+    // 6. Inject Custom CSS for catchy colors
+    const customCSS = `
+    <style>
+        /* Catchy Colors and Animations injected by automation */
+        .botao-comprar, .elementor-button {
+            background: linear-gradient(45deg, #ff007f, #ff5e00) !important;
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+            border: none !important;
+            color: #ffffff !important;
+            font-weight: bold !important;
+        }
+        .botao-comprar:hover, .elementor-button:hover {
+            transform: scale(1.05) translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(255, 0, 127, 0.6) !important;
+        }
+        .elementor-heading-title {
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1) !important;
+        }
+    </style>
+    `;
+    content = content.replace('</head>', customCSS + '\n</head>');
 
     fs.writeFileSync(filePath, content, 'utf8');
     console.log(`Successfully cleaned and updated: ${filePath}`);
