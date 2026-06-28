@@ -83,9 +83,21 @@ targetFiles.forEach(filePath => {
     content = content.replace(/href="[^"]*checkout\.php[^"]*"/gi, 'href="https://pay.disruptybr.app/c/jb2?of=Lue"');
     content = content.replace(/href="[^"]*pay\.disruptybr\.app[^"]*"/gi, 'href="https://pay.disruptybr.app/c/jb2?of=Lue"');
     content = content.replace(/href="index\.html"/g, 'href="https://pay.disruptybr.app/c/jb2?of=Lue"');
+    content = content.replace(/href="https:\/\/pay\.kiwify\.com\.br[^"]*"/gi, 'href="https://pay.disruptybr.app/c/jb2?of=Lue"');
+    content = content.replace(/<a class="botao-comprar" href="[^"]*"/gi, '<a class="botao-comprar" href="https://pay.disruptybr.app/c/jb2?of=Lue"');
+    content = content.replace(/<a class="elementor-button elementor-button-link[^"]*" href="[^"]*"/gi, '<a class="elementor-button elementor-button-link elementor-size-md" href="https://pay.disruptybr.app/c/jb2?of=Lue"');
 
-    // 4. Update the pricing card text just in case (to ensure it displays 9,90)
-    content = content.replace(/18,90/g, '9,90');
+    // 4. Update the pricing card text just in case (to ensure it displays 14,90)
+    content = content.replace(/R\$ 18,90/g, 'R$ 14,90');
+    content = content.replace(/R\$18,90/g, 'R$14,90');
+    content = content.replace(/R\$ 9,90/g, 'R$ 14,90');
+    content = content.replace(/R\$9,90/g, 'R$14,90');
+    content = content.replace(/R\$ 29,90/g, 'R$ 14,90');
+    content = content.replace(/R\$29,90/g, 'R$14,90');
+
+    // 5. Update logo
+    content = content.replace(/src="https:\/\/criandoarte\.com\/wp-content\/uploads\/2026\/05\/150-brinquedos-Photoroom-768x175\.png"/g, 'src="./brinca_facil_logo_v2.png"');
+    content = content.replace(/src="[^"]*logo[^"]*"/gi, 'src="./brinca_facil_logo_v2.png"');
 
     fs.writeFileSync(filePath, content, 'utf8');
     console.log(`Successfully cleaned and updated: ${filePath}`);
